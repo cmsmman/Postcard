@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTextField: UITextField!
     @IBOutlet weak var postcardButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -28,14 +29,17 @@ class ViewController: UIViewController {
 
     @IBAction func sendPostcardButtonPressed(sender: UIButton) {
         //Adding a comment to test commit to github
+        nameLabel.text = enterNameTextField.text
         messageLabel.text = enterMessageTextField.text
         messageLabel.textColor = UIColor.redColor()
         enterNameTextField.text = ""
         enterMessageTextField.text = ""
+        nameLabel.hidden = false
         messageLabel.hidden = false
+        enterNameTextField.resignFirstResponder()
         enterMessageTextField.resignFirstResponder()
         postcardButton.setTitle("Mail Sent", forState: UIControlState.Normal)
-    }
+    }	
 
 }
 
