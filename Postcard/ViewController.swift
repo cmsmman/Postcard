@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sendPostcardButtonPressed(sender: UIButton) {
+        //Adding a comment to test commit to github
         messageLabel.text = enterMessageTextField.text
         messageLabel.textColor = UIColor.redColor()
         enterNameTextField.text = ""
